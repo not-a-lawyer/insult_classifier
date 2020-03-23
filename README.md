@@ -1,4 +1,4 @@
-# insult_classifier
+# Insult Classifier
 A prototype to identify insults with different NLP approaches.
 
 # TODO
@@ -6,3 +6,4 @@ A prototype to identify insults with different NLP approaches.
 * list of test data
 
 # Legal
+MIT
