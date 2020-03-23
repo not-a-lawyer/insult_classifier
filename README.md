@@ -6,4 +6,4 @@ A prototype to identify insults with different NLP approaches.
 * list of test data
 
 # Legal
-MIT
+[MIT](License)
