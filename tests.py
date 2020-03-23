@@ -1,5 +1,5 @@
 import unittest
-from insult_classifier import *
+from bayes_classifier import *
 
 
 class MyTestCase(unittest.TestCase):
