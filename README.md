@@ -13,7 +13,9 @@ A prototype to identify insults with different NLP approaches.
 
 **F1**:  0.9692217866377512
 
-(If everything has been done correctly)
+with `train_test_split(random_state=1)`
+
+(If everything has been done correctly and no test-train mixup happenend)
 
 
 # Legal
