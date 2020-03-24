@@ -11,7 +11,7 @@ def evaluate_model(label_test, predictions):
     print('F1 score: ', format(f1_score(label_test, predictions)))
 
 
-def apply_model(training_data, testing_data , label_train, label_test):
+def apply_model(training_data, testing_data , label_train):
     naive_bayes = MultinomialNB()
     naive_bayes.fit(training_data, label_train)
     predictions = naive_bayes.predict(testing_data)
