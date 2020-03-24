@@ -4,7 +4,7 @@ from bayes_classifier import *
 
 class MyTestCase(unittest.TestCase):
     def test_something(self):
-        import_data()
+        train_model(import_data())
         self.assertEqual(True, False)
 
 

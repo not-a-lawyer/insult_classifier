@@ -1,5 +1,13 @@
-#from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 import pandas as pd
+
+def train_model(type_tweet):
+    data_train, data_test, label_train, label_test = train_test_split(type_tweet['tweet'],
+                                                        type_tweet['class'],
+                                                        random_state=1)
+
+    pass
+
 
 
 def import_data():
@@ -10,25 +18,21 @@ def import_data():
     #Get for each index the class.
     # The class "0" is hate speech
     # and everything else won't be considered hate speech.
+    names = ["class", "tweet"]
+    type_tweet = df[names]
 
-    classes = df["class"]
-    tweets = df["tweet"]
+    #change all other labels to 1
+    #DataFrame cell has to be changed this way. Normal iterator only changes a copy
+    for i in range(0, len(type_tweet["class"])):
+        if type_tweet.at[i, "class"] > 0:
+            type_tweet.at[i, "class"] = 1
 
-    hate_speech = []
-    other_speech = []
-    index = 0
-    for class_ in classes:
 
-        if class_ == 0:
-            hate_speech.append(index)
-        else:
-            other_speech.append(index)
-        index += 1
-
-    first_hate_speech = tweets[hate_speech[1]]
-    pass
+    return type_tweet
 
 
 
 
-# split into training and testing sets
+
+
+
