@@ -18,7 +18,7 @@ def apply_model(training_data, testing_data , label_train):
     return predictions
 
 
-def train_model(type_tweet):
+def train_model(type_tweet, custom_tweet_data = pd.Series.empty):
     data_train, data_test, label_train, label_test = train_test_split(type_tweet['tweet'],
                                                         type_tweet['class'],
                                                         random_state=1)
@@ -28,7 +28,10 @@ def train_model(type_tweet):
     training_data = count_vector.fit_transform(data_train)
 
     # Transform testing data and return s matrix.
-    testing_data = count_vector.transform(data_test)
+    if not custom_tweet_data.empty:
+        testing_data = count_vector.transform(custom_tweet_data)
+    else:
+        testing_data = count_vector.transform(data_test)
 
     return training_data, testing_data , label_train, label_test
 
