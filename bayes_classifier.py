@@ -18,7 +18,7 @@ def apply_model(training_data, testing_data , label_train):
     return predictions
 
 
-def train_model(type_tweet, custom_tweet_data = pd.Series.empty):
+def train_model(type_tweet, custom_tweet_data = pd.Series([])):
     data_train, data_test, label_train, label_test = train_test_split(type_tweet['tweet'],
                                                         type_tweet['class'],
                                                         random_state=1)
