@@ -61,11 +61,31 @@ def relabel_german_data():
     names = ["tweet", "type", "detail"]
 
     #Downloaded the data from https://github.com/uds-lsv/GermEval-2018-Data/blob/master/germeval2018.training.txt. See readme for citation.
-    data = pd.read_table("germeval2018.training.txt", columns = names)
+    data = pd.read_table("germeval2018.training.txt", names=names)
 
 
 
-    pass
+    #fitting dataframe to only have two columns
+    reversed_column_labels = ["type", "tweet"]
+
+    removed_colum = data[["tweet", "type"]]
+
+    #swap columns
+    type_tweet = removed_colum.reindex(columns = reversed_column_labels)
+
+    # change all other labels to 1 and OFFENSE to 0
+    # DataFrame cell has to be changed this way. Normal iterator only changes a copy
+    for i in range(0, len(type_tweet)):
+        if type_tweet.at[i, "type"] == "OTHER":
+            type_tweet.at[i, "type"] = 1
+        else:
+            type_tweet.at[i, "type"] = 0
+        i += 1
+
+
+
+
+    return type_tweet
 
 
 
