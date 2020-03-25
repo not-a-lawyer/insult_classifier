@@ -37,10 +37,10 @@ def train_model(type_tweet, custom_tweet_data = pd.Series([])):
 
 
 
-def import_data():
+def import_data(filename = "insults.csv"):
     # Dataset "insults.csv" from https://github.com/t-davidson/hate-speech-and-offensive-language/tree/master/data
 
-    df = pd.read_csv("insults.csv")
+    df = pd.read_csv(filename)
 
     #Get for each index the class.
     # The class "0" is hate speech
@@ -57,6 +57,15 @@ def import_data():
 
     return type_tweet
 
+def relabel_german_data():
+    names = ["tweet", "type", "detail"]
+
+    #Downloaded the data from https://github.com/uds-lsv/GermEval-2018-Data/blob/master/germeval2018.training.txt. See readme for citation.
+    data = pd.read_table("germeval2018.training.txt", columns = names)
+
+
+
+    pass
 
 
 

@@ -5,7 +5,7 @@ import pandas as pd
 
 
 class MyTestCase(unittest.TestCase):
-    def test_something(self):
+    def test_english_data(self):
         training_data, testing_data, label_train, label_test = train_model(import_data())
         predictions = apply_model(training_data, testing_data, label_train)
         evaluate_model(label_test, predictions)
@@ -21,6 +21,16 @@ class MyTestCase(unittest.TestCase):
         predictions = apply_model(training_data, testing_data, label_train)
 
         print(predictions)
+
+    def test_german_data(self):
+        relabel_german_data()
+        pass
+        #training_data, testing_data, label_train, label_test = train_model(import_data("german_insults.csv"))
+
+
+
+
+
 
 
 
