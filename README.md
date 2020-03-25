@@ -4,6 +4,8 @@ A prototype to identify insults with different NLP approaches.
 # List of Test Data
 [Twitter Tweets labelled as Hate Speech or Other](https://github.com/t-davidson/hate-speech-and-offensive-language/tree/master/data)
 
+[GermEval-2018-Data](https://github.com/uds-lsv/GermEval-2018-Data) cited from Michael Wiegand, Melanie Siegel, and Josef Ruppenhofer: "Overview of the GermEval 2018 Shared Task on the Identification of Offensive Language", in Proceedings of the GermEval, 2018, Vienna, Austria.
+
 # Naive Bayes Approach
 **Accuracy**:  0.9404454486765655
 
