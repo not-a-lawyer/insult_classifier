@@ -23,9 +23,11 @@ class MyTestCase(unittest.TestCase):
         print(predictions)
 
     def test_german_data(self):
-        relabel_german_data()
-        pass
-        #training_data, testing_data, label_train, label_test = train_model(import_data("german_insults.csv"))
+
+
+        training_data, testing_data, label_train, label_test = train_model(relabel_german_data())
+        predictions = apply_model(training_data, testing_data, label_train)
+        evaluate_model(label_test, predictions)
 
 
 
