@@ -15,7 +15,7 @@ A prototype to identify insults with different NLP approaches.
 
 with `train_test_split(random_state=1)`
 
-(If everything has been done correctly and no test-train mixup happenend)
+(Hoping everything has been done correctly and no test-train mixup happenend)
 
 
 # Legal
