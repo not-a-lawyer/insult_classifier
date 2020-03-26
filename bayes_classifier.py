@@ -77,9 +77,9 @@ def relabel_german_data():
     # DataFrame cell has to be changed this way. Normal iterator only changes a copy
     for i in range(0, len(type_tweet)):
         if type_tweet.at[i, "class"] == "OTHER":
-            type_tweet.at[i, "class"] = 1
+            type_tweet.at[i, "class"] = 1.
         else:
-            type_tweet.at[i, "class"] = 0
+            type_tweet.at[i, "class"] = 0.
         i += 1
 
 

@@ -29,6 +29,28 @@ class MyTestCase(unittest.TestCase):
         predictions = apply_model(training_data, testing_data, label_train)
         evaluate_model(label_test, predictions)
 
+    def test_label(self):
+        type_tweet = relabel_german_data()
+
+        for class_ in type_tweet["class"]:
+            assert(class_ == 0 or class_ == 1)
+
+    def test_data_sets_equal(self):
+        english = import_data()
+        german = relabel_german_data()
+
+
+        #see whether same error occurs as with sole use of German data
+        merged_data = english.append(german, ignore_index=True)
+
+        training_data, testing_data, label_train, label_test = train_model(merged_data)
+        predictions = apply_model(training_data, testing_data, label_train)
+        evaluate_model(label_test, predictions)
+
+        pass
+
+
+
 
 
 
