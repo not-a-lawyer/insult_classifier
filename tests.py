@@ -1,8 +1,8 @@
 import unittest
 from bayes_classifier import *
-from sklearn.feature_extraction.text import CountVectorizer
-import pandas as pd
 
+import pandas as pd
+import string
 
 class MyTestCase(unittest.TestCase):
     def test_english_data(self):
@@ -27,7 +27,8 @@ class MyTestCase(unittest.TestCase):
 
         training_data, testing_data, label_train, label_test = train_model(relabel_german_data())
         predictions = apply_model(training_data, testing_data, label_train)
-        evaluate_model(label_test, predictions)
+        #required for German data
+        evaluate_model(label_test.astype('int'), predictions)
 
     def test_label(self):
         type_tweet = relabel_german_data()
@@ -35,9 +36,11 @@ class MyTestCase(unittest.TestCase):
         for class_ in type_tweet["class"]:
             assert(class_ == 0 or class_ == 1)
 
-    def test_data_sets_equal(self):
+    def test_data_sets_merged(self):
         english = import_data()
         german = relabel_german_data()
+
+
 
 
         #see whether same error occurs as with sole use of German data
@@ -45,9 +48,9 @@ class MyTestCase(unittest.TestCase):
 
         training_data, testing_data, label_train, label_test = train_model(merged_data)
         predictions = apply_model(training_data, testing_data, label_train)
-        evaluate_model(label_test, predictions)
+        evaluate_model(label_test.astype('int'), predictions)
 
-        pass
+
 
 
 

@@ -4,6 +4,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
+
 def evaluate_model(label_test, predictions):
     print('Accuracy score: ', format(accuracy_score(label_test, predictions)))
     print('Precision score: ', format(precision_score(label_test, predictions)))
@@ -13,6 +14,9 @@ def evaluate_model(label_test, predictions):
 
 def apply_model(training_data, testing_data , label_train):
     naive_bayes = MultinomialNB()
+    training_data = training_data.astype('int')
+    label_train = label_train.astype('int')
+
     naive_bayes.fit(training_data, label_train)
     predictions = naive_bayes.predict(testing_data)
     return predictions
@@ -86,6 +90,11 @@ def relabel_german_data():
 
 
     return type_tweet
+
+#Primtive approach to filter German and special characters
+def filter_characters(value):
+    allowed_characters = " 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    return ' '.join(c for c in value if c in allowed_characters )
 
 
 
