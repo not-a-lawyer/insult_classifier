@@ -15,6 +15,14 @@ A prototype to identify insults with different NLP approaches.
 
 **F1**:  0.9692217866377512
 
+| Scores        | English Data           | German Data  |
+| ------------- |:-------------:| -----:|
+| **Accuracy**      | 0.94 | 0.76|
+| **Precision**     | 0.94      |   0.78 |
+| **Recall** | 0.9973      |    0.89 |
+| **F1** | 0.9692     |    0.83 |
+
+
 with `train_test_split(random_state=1)`
 
 (Hoping everything has been done correctly and no test-train mixup happenend)
