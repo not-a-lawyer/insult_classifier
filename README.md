@@ -8,7 +8,7 @@ A prototype to identify insults with different NLP approaches.
 
 # Naive Bayes Approach
 
-| Scores        | English Data           | German Data  | German Data with [German stop words](https://github.com/gosia-malgosia/german-stop-words)
+| Scores        | English Data           | German Data <sup>[1](#myfootnote1)</sup> | German Data with [German stop words](https://github.com/gosia-malgosia/german-stop-words)
 | ------------- |:-------------:| -----:|-----:|
 | **Accuracy**      | 0.94      | 0.76  |0.739 |
 | **Precision**     | 0.94      | 0.78  |0.787 |
@@ -17,6 +17,7 @@ A prototype to identify insults with different NLP approaches.
 
 
 with `train_test_split(random_state=1)`
+<a name="myfootnote1">1</a>: with the standard English stop words list.
 
 (Hoping everything has been done correctly and no test-train mixup happenend)
 
