@@ -17,10 +17,13 @@ A prototype to identify insults with different NLP approaches.
 
 
 with `train_test_split(random_state=1)`
-<a name="myfootnote1">1</a>: with the standard English stop words list.
+
 
 (Hoping everything has been done correctly and no test-train mixup happenend)
 
 
 # Legal
 [MIT](https://github.com/not-a-lawyer/insult_classifier/blob/master/LICENSE)
+
+## Footnotes
+<a name="myfootnote1">1</a>: with the standard English stop words list.
