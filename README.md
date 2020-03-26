@@ -15,12 +15,12 @@ A prototype to identify insults with different NLP approaches.
 
 **F1**:  0.9692217866377512
 
-| Scores        | English Data           | German Data  |
-| ------------- |:-------------:| -----:|
-| **Accuracy**      | 0.94 | 0.76|
-| **Precision**     | 0.94      |   0.78 |
-| **Recall** | 0.9973      |    0.89 |
-| **F1** | 0.9692     |    0.83 |
+| Scores        | English Data           | German Data  | German Data with [German stop words](https://github.com/gosia-malgosia/german-stop-words)
+| ------------- |:-------------:| -----:|-----:|
+| **Accuracy**      | 0.94      | 0.76  |0.739 |
+| **Precision**     | 0.94      | 0.78  |0.787 |
+| **Recall**        | 0.9973    | 0.89  |0.83  |
+| **F1**            | 0.9692    | 0.83  |0.81  |
 
 
 with `train_test_split(random_state=1)`
