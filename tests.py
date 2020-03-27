@@ -54,7 +54,8 @@ class MyTestCase(unittest.TestCase):
         evaluate_model(label_test.astype('int'), predictions)
 
     def test_english_train_on_german_test(self):
-        #TODO
+        english = import_data()
+        german = relabel_german_data()
         pass
 
 

@@ -39,6 +39,28 @@ def train_model(type_tweet, custom_tweet_data = pd.Series([]), stop_words = "eng
 
     return training_data, testing_data , label_train, label_test
 
+def train_model_mixed_data(type_tweet, split_index, custom_tweet_data = pd.Series([]), stop_words = "english"):
+
+    data_train = type_tweet['tweet'][:split_index]
+    label_train = type_tweet['class'][:split_index]
+    data_test  = type_tweet['tweet'][split_index:]
+
+    data_train, data_test, label_train, label_test = train_test_split(type_tweet['tweet'],
+                                                        type_tweet['class'],
+                                                        random_state=1)
+    count_vector = CountVectorizer(stop_words=stop_words)
+
+    # Fit training data and return a matrix
+    training_data = count_vector.fit_transform(data_train)
+
+    # Transform testing data and return s matrix.
+    if not custom_tweet_data.empty:
+        testing_data = count_vector.transform(custom_tweet_data)
+    else:
+        testing_data = count_vector.transform(data_test)
+
+    return training_data, testing_data , label_train, label_test
+
 
 
 def import_data(filename = "insults.csv"):
