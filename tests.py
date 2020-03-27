@@ -56,6 +56,14 @@ class MyTestCase(unittest.TestCase):
     def test_english_train_on_german_test(self):
         english = import_data()
         german = relabel_german_data()
+
+        merged_data = english.append(german, ignore_index=True)
+
+        #split the data within the function at this index
+        split_index = len(english)
+        training_data, testing_data, label_train, label_test = train_model(merged_data, split_index)
+        predictions = apply_model(training_data, testing_data, label_train)
+        evaluate_model(label_test.astype('int'), predictions)
         pass
 
 
