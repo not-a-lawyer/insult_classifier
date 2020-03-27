@@ -61,7 +61,7 @@ class MyTestCase(unittest.TestCase):
 
         #split the data within the function at this index
         split_index = len(english)
-        training_data, testing_data, label_train, label_test = train_model(merged_data, split_index)
+        training_data, testing_data, label_train, label_test = train_model_mixed_data(merged_data, split_index)
         predictions = apply_model(training_data, testing_data, label_train)
         evaluate_model(label_test.astype('int'), predictions)
         pass
