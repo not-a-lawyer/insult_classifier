@@ -79,8 +79,12 @@ class MyTestCase(unittest.TestCase):
         evaluate_model(label_test.astype('int'), predictions)
 
     def test_tm_preprocessing(self):
+
+        #coverting series to list
         text_sample = import_data("insults.csv")["tweet"].values.tolist()
         preprocessed_sample = stemming_text_samples(text_sample)
+
+        ##takes a little time (a minute)
         pass
 
 

@@ -16,11 +16,17 @@ def stemming_text_samples(text_samples):
     stemmer = SnowballStemmer("english")
 
 
-    processed_text = []
 
-    for token in gensim.utils.simple_preprocess(text_samples):
-        if token not in gensim.parsing.preprocessing.STOPWORDS and len(token) > 3:
-            processed_text.append(stemmer.stem(WordNetLemmatizer().lemmatize(text_samples, pos='v')))
+    processed_text_sample = []
 
-    return processed_text
+    for text in text_samples:
+        processed_text = []
+
+        for token in gensim.utils.simple_preprocess(text):
+            if token not in gensim.parsing.preprocessing.STOPWORDS and len(token) > 3:
+                processed_text.append(stemmer.stem(WordNetLemmatizer().lemmatize(token, pos='v')))
+
+        processed_text_sample.append(processed_text)
+
+    return processed_text_sample
 
