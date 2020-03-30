@@ -21,6 +21,10 @@ with `train_test_split(random_state=1)`
 
 (Hoping everything has been done correctly and no test-train mixup happenend)
 
+# Current TODO
+
+Creating a topic modeling approach to classify tweets.
+
 
 # Legal
 [MIT](https://github.com/not-a-lawyer/insult_classifier/blob/master/LICENSE)
