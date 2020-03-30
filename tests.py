@@ -1,5 +1,6 @@
 import unittest
 from bayes_classifier import *
+from topic_modeling import *
 
 import pandas as pd
 import string
@@ -76,6 +77,11 @@ class MyTestCase(unittest.TestCase):
         training_data, testing_data, label_train, label_test = train_model_mixed_data(merged_data, split_index)
         predictions = apply_model(training_data, testing_data, label_train)
         evaluate_model(label_test.astype('int'), predictions)
+
+    def test_tm_preprocessing(self):
+        text_sample = import_data("insults.csv")["tweet"]
+        preprocessed_sample = stemming_text_samples(text_sample)
+        pass
 
 
 
