@@ -30,3 +30,13 @@ def stemming_text_samples(text_samples):
 
     return processed_text_sample
 
+def bag_of_words(preprocessed_sample):
+    dictionary = gensim.corpora.Dictionary(preprocessed_sample)
+
+    #create BoW for each Tweet
+    bow_corpus = [dictionary.doc2bow(doc) for doc in preprocessed_sample]
+
+    return dictionary, bow_corpus
+
+
+
