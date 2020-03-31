@@ -83,6 +83,7 @@ class MyTestCase(unittest.TestCase):
         #coverting series to list
         text_sample = import_data("insults.csv")["tweet"].values.tolist()
         preprocessed_sample = stemming_text_samples(text_sample)
+        dictionary, bow_corpus = bag_of_words(preprocessed_sample)
 
         ##takes a little time (a minute)
         pass
