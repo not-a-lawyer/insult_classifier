@@ -40,7 +40,7 @@ def bag_of_words(preprocessed_sample):
 
 def train_lda_model(dictionary, bow_corpus):
     lda_model = gensim.models.LdaMulticore(bow_corpus,
-                                           num_topics=10,
+                                           num_topics=2,
                                            id2word=dictionary,
                                            passes=2,
                                            workers=2)
