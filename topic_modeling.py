@@ -38,5 +38,14 @@ def bag_of_words(preprocessed_sample):
 
     return dictionary, bow_corpus
 
+def train_lda_model(dictionary, bow_corpus):
+    lda_model = gensim.models.LdaMulticore(bow_corpus,
+                                           num_topics=10,
+                                           id2word=dictionary,
+                                           passes=2,
+                                           workers=2)
+    return lda_model
+
+
 
 

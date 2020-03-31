@@ -85,7 +85,12 @@ class MyTestCase(unittest.TestCase):
         preprocessed_sample = stemming_text_samples(text_sample)
         dictionary, bow_corpus = bag_of_words(preprocessed_sample)
 
+        lda_model = train_lda_model(dictionary, bow_corpus)
+
         ##takes a little time (a minute)
+        for idx, topic in lda_model.print_topics(-1):
+            print("Topic: {} \nWords: {}".format(idx, topic))
+            print("\n")
         pass
 
 
