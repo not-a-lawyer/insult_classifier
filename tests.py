@@ -7,7 +7,21 @@ import string
 
 class MyTestCase(unittest.TestCase):
     def test_count_data_sets(self):
-        pass
+        type_tweet = import_data()
+        german = relabel_german_data()
+        hate_speech_count = 0
+        german_hate_speech_count = 0
+
+        for tweet in type_tweet["class"]:
+            if tweet == 0:
+                hate_speech_count += 1
+
+        for tweet in german["class"]:
+            if tweet == 0:
+                german_hate_speech_count += 1
+
+        print(hate_speech_count, len(type_tweet["class"]),100/len(type_tweet["class"])* hate_speech_count)
+        print(german_hate_speech_count, len(german["class"]), 100/len(german["class"]) * german_hate_speech_count)
 
     def test_english_data(self):
         training_data, testing_data, label_train, label_test = train_model(import_data())
