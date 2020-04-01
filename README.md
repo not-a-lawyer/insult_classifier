@@ -10,10 +10,10 @@ A prototype to identify insults with different NLP approaches.
 
 | Scores        | English Data           | German Data <sup>[1](#myfootnote1)</sup> | German Data with [German stop words](https://github.com/gosia-malgosia/german-stop-words) | English train German test | German train English test
 | ------------- |:-------------:| -----:|-----:|  -----:|-----:|
-| **Accuracy**      | 0.94      | 0.76  |0.739 |  x  |x |
-| **Precision**     | 0.94      | 0.78  |0.787 |  x  |x |
-| **Recall**        | 0.9973    | 0.89  |0.83  |  x  |x |
-| **F1**            | 0.9692    | 0.83  |0.81  |  x  |x |
+| **Accuracy**      | 0.94      | 0.76  |0.739 |  0.64  |0.71 |
+| **Precision**     | 0.94      | 0.78  |0.787 |  0.67  |0.94 |
+| **Recall**        | 0.9973    | 0.89  |0.83  |  0.90  |0.73 |
+| **F1**            | 0.9692    | 0.83  |0.81  |  0.77  |0.82 |
 
 
 with `train_test_split(random_state=1)`
