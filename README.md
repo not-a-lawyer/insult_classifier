@@ -31,7 +31,7 @@ with `train_test_split(random_state=1)`
 # Conclusions so far
 
 Intuitive interpretation of the given metrics for the English data is misleading, because seeing a score of 0.94 might seem good,
-but it's as bad as marking everything the same label as the most frequent label.
+but it's as bad as marking everything the same label as the most frequent label. On the other side, the Naive Bayes metrics on the German data are a real improvement.
 
 
 # Topic Modeling
