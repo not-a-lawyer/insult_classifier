@@ -20,6 +20,9 @@ class MyTestCase(unittest.TestCase):
 
         print(compute_precision(hate_speech_count, type_tweet), compute_recall(hate_speech_count, type_tweet))
 
+        print_metrics(hate_speech_count, type_tweet)
+        print_metrics(german_hate_speech_count, german)
+
     def test_english_data(self):
         training_data, testing_data, label_train, label_test = train_model(import_data())
         predictions = apply_model(training_data, testing_data, label_train)
