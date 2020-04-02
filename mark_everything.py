@@ -18,3 +18,18 @@ def compute_recall(positive_count, two_column_data_set):
     #always one, because there's never a true negative, because hate speech is never labelled as such
     return (len(two_column_data_set["class"])-positive_count)/(len(two_column_data_set["class"])-positive_count)
 
+def compute_accuracy(positive_count, two_column_data_set):
+    return (len(two_column_data_set["class"])-positive_count) / len(two_column_data_set["class"])
+
+def compute_f_one(precision, recall):
+    return 2*precision*recall/(precision+recall)
+
+def print_metrics(positive_count, two_column_data_set):
+    print("Accuracy: ", compute_accuracy(positive_count, two_column_data_set),"\n",
+        "Precision: ", compute_precision(positive_count, two_column_data_set), "\n",
+        "Recall: ", compute_recall(positive_count, two_column_data_set),"\n",
+        "F1: ", compute_f_one(compute_precision(positive_count, two_column_data_set), compute_recall(positive_count, two_column_data_set)))
+
+
+
+

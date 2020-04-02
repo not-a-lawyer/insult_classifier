@@ -18,6 +18,8 @@ class MyTestCase(unittest.TestCase):
         print(hate_speech_count, len(type_tweet["class"]),100/len(type_tweet["class"])* hate_speech_count)
         print(german_hate_speech_count, len(german["class"]), 100/len(german["class"]) * german_hate_speech_count)
 
+        print(compute_precision(hate_speech_count, type_tweet), compute_recall(hate_speech_count, type_tweet))
+
     def test_english_data(self):
         training_data, testing_data, label_train, label_test = train_model(import_data())
         predictions = apply_model(training_data, testing_data, label_train)
