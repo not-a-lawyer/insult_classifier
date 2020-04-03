@@ -38,6 +38,10 @@ but it's as bad as marking everything the same label as the most frequent label.
 
 Did not provide any useful classifications.
 
+# TO DO
+
+Trying out RNN approach.
+
 # Legal
 [MIT](https://github.com/not-a-lawyer/insult_classifier/blob/master/LICENSE)
 
