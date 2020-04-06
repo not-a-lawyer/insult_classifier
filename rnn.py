@@ -8,4 +8,6 @@ from bayes_classifier import *
 type_tweet = import_data()
 
 def preprocess_tweets_for_keras():
+    ##Will do when refinement of accuracy is necessary
+
     pass
