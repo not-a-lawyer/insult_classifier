@@ -6,3 +6,6 @@ from bayes_classifier import *
 
 #import insults.csv. see import_data() for details on data or README
 type_tweet = import_data()
+
+def preprocess_tweets_for_keras():
+    pass
