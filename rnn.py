@@ -11,3 +11,8 @@ def preprocess_tweets_for_keras():
     ##Will do when refinement of accuracy is necessary
 
     pass
+
+def set_up_model():
+    tweets = type_tweet["tweet"]
+    hate_speech_labels = type_tweet["tweet"]
+    pass
