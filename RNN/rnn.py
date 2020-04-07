@@ -9,7 +9,7 @@ from nltk.corpus import stopwords
 #import insults.csv. see import_data() for details on data or README
 type_tweet = import_data()
 
-def preprocess_tweets_for_keras():
+def preprocess_tweets_for_keras(type_tweet):
     ##Will do when refinement of accuracy is necessary
 
     ##remove stopwords
