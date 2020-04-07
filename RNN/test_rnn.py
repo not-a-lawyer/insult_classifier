@@ -1,7 +1,7 @@
 import unittest
 
 from bayes_classifier import *
-from rnn.py import *
+from RNN.rnn import *
 
 
 class MyTestCase(unittest.TestCase):
