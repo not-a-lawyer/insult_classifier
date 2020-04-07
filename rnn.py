@@ -4,6 +4,8 @@
 
 from bayes_classifier import *
 
+from nltk.corpus import stopwords
+
 #import insults.csv. see import_data() for details on data or README
 type_tweet = import_data()
 
@@ -11,6 +13,14 @@ def preprocess_tweets_for_keras():
     ##Will do when refinement of accuracy is necessary
 
     ##remove stopwords
+
+    stop_words = set(stopwords.words('english'))
+
+    for tweet in type_tweet["tweet"]:
+        for word in tweet:
+            if word in stop_words:
+                word = " "
+
 
     ##remove links
 
