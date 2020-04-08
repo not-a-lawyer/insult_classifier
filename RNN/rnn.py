@@ -5,6 +5,7 @@
 from bayes_classifier import *
 
 from nltk.corpus import stopwords
+from keras.preprocessing.text import Tokenizer
 
 #import insults.csv. see import_data() for details on data or README
 type_tweet = import_data()
@@ -24,7 +25,20 @@ def preprocess_tweets_for_keras(type_tweet):
 
     ##remove links
 
-    pass
+def tokenize_tweets(type_tweet):
+    """
+    Takes the tweets and tokenizes them
+
+    :param type_tweet:
+    :return tweets_tokens:
+    """
+    tkn = Tokenizer()
+    tkn.fit_on_texts(type_tweet["tweets"])
+    return tkn.texts_to_sequences(type_tweet["tweets"])
+
+
+
+
 
 def set_up_model():
     tweets = type_tweet["tweet"]
