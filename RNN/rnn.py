@@ -33,8 +33,8 @@ def tokenize_tweets(type_tweet):
     :return tweets_tokens:
     """
     tkn = Tokenizer()
-    tkn.fit_on_texts(type_tweet["tweets"])
-    return tkn.texts_to_sequences(type_tweet["tweets"])
+    tkn.fit_on_texts(type_tweet["tweet"])
+    return tkn.texts_to_sequences(type_tweet["tweet"]), tkn
 
 
 

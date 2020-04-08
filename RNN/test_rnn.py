@@ -13,6 +13,7 @@ class MyTestCase(unittest.TestCase):
         preprocess_tweets_for_keras(type_tweet)
         tokens = tokenize_tweets(type_tweet)
 
+        print(tokens.word_index)
         pass
 
 
