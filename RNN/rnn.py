@@ -33,7 +33,7 @@ def tokenize_tweets(type_tweet):
     :param type_tweet:
     :return tweets_tokens:
     """
-    tkn = Tokenizer()
+    tkn = Tokenizer(num_words=10000)
     tkn.fit_on_texts(type_tweet["tweet"])
     return tkn.texts_to_sequences(type_tweet["tweet"]), tkn
 
@@ -42,6 +42,14 @@ def tokenize_tweets(type_tweet):
 
 
 def set_up_model():
+    """
+    Set up the keras model
+    :return model:
+    """
+
+
+    input_tweet = Input(shape=(None,))
+    tweet_embedding = Embedding(10000, 200)
     tweets = type_tweet["tweet"]
     hate_speech_labels = type_tweet["tweet"]
     pass

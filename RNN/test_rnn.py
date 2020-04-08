@@ -14,6 +14,7 @@ class MyTestCase(unittest.TestCase):
         tokenized_tweets, tokens = tokenize_tweets(type_tweet)
 
         print(tokens.word_index)
+        print(len(tokens.word_index))
         pass
 
 
