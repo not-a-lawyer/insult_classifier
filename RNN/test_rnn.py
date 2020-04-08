@@ -11,6 +11,7 @@ class MyTestCase(unittest.TestCase):
         type_tweet = import_data()
 
         preprocess_tweets_for_keras(type_tweet)
+        tokens = tokenize_tweets(type_tweet)
 
         pass
 
