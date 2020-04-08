@@ -19,6 +19,7 @@ def preprocess_tweets_for_keras(type_tweet):
     stop_words = set(stopwords.words('english'))
 
     for tweet in type_tweet["tweet"]:
+        # TODO fix to look by word not character basis
         for word in tweet:
             if word in stop_words:
                 word = " "
