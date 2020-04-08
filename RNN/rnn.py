@@ -6,6 +6,7 @@ from bayes_classifier import *
 
 from nltk.corpus import stopwords
 from keras.preprocessing.text import Tokenizer
+from keras.layers import Dense, Input, LSTM, Bidirectional, Activation, Conv1D, GRU, TimeDistributed, Dropout, Embedding, GlobalMaxPooling1D, MaxPooling1D, Add, Flatten, SpatialDropout1D
 
 #import insults.csv. see import_data() for details on data or README
 type_tweet = import_data()
