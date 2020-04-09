@@ -5,7 +5,7 @@ from RNN.rnn import *
 
 
 class MyTestCase(unittest.TestCase):
-    def test_preprocessing(self):
+    def test_general(self):
 
         ##insults.csv needs to be copied into RNN directory
         type_tweet = import_data()
@@ -15,6 +15,7 @@ class MyTestCase(unittest.TestCase):
 
         print(tokens.word_index)
         print(len(tokens.word_index))
+        model = set_up_triple_lstm_model()
         pass
 
 
