@@ -65,7 +65,7 @@ def set_up_triple_lstm_model():
 
     learning_rate = 1e-3
 
-    input_tweet = Input(shape=(24783,))
+    input_tweet = Input(shape=(None,))
     tweet_embedding = Embedding(5000, 200)(input_tweet)
     lstm = LSTM(64, recurrent_dropout=0.2, return_sequences = True)(tweet_embedding)
     dropout = Dropout(0.2)(lstm)
