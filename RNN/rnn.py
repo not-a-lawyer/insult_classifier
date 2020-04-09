@@ -28,8 +28,11 @@ def preprocess_tweets_for_keras(type_tweet):
     # DataFrame cell has to be changed this way. Normal iterator only changes a copy
     for i in range(0, len(type_tweet["tweet"])):
         type_tweet.at[i, "tweet"] = type_tweet.at[i, "tweet"].split(" ")
-        if type_tweet.at[i, "tweet"] in stop_words:
-            type_tweet.at[i, "tweet"] = " "
+
+        #iterate over words in tweet
+        for j in range(0, len(type_tweet.at[i, "tweet"] )):
+            if type_tweet.at[i, "tweet"][j] in stop_words:
+                type_tweet.at[i, "tweet"][j] = " "
 
 
     ##remove links
