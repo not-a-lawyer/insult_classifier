@@ -44,7 +44,7 @@ def tokenize_tweets(type_tweet):
     :return tweets_tokens:
     """
 
-
+    #TODO Fix tokenizing not abiding word limit
     tkn = Tokenizer(num_words=10000)
     tkn.fit_on_texts(type_tweet["tweet"])
     return tkn.texts_to_sequences(type_tweet["tweet"]), tkn
