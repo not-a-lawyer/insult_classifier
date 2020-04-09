@@ -12,6 +12,11 @@ from keras.layers import Dense, Input, LSTM, Bidirectional, Activation, Conv1D, 
 type_tweet = import_data()
 
 def preprocess_tweets_for_keras(type_tweet):
+    """
+    preprocesses the type_tweet["tweet"] column to fit into keras
+    :param type_tweet:
+    :changes type_tweet:
+    """
     ##Will do when refinement of accuracy is necessary
 
     ##remove stopwords
@@ -20,6 +25,10 @@ def preprocess_tweets_for_keras(type_tweet):
 
     for tweet in type_tweet["tweet"]:
         # TODO fix to look by word not character basis
+        tweet = tweet.split(" ")
+
+
+
         for word in tweet:
             if word in stop_words:
                 word = " "
