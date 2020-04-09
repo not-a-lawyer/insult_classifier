@@ -24,7 +24,7 @@ def preprocess_tweets_for_keras(type_tweet):
     stop_words = set(stopwords.words('english'))
 
     for tweet in type_tweet["tweet"]:
-        # TODO fix to look by word not character basis
+
         tweet = tweet.split(" ")
 
 
@@ -43,6 +43,8 @@ def tokenize_tweets(type_tweet):
     :param type_tweet:
     :return tweets_tokens:
     """
+
+
     tkn = Tokenizer(num_words=10000)
     tkn.fit_on_texts(type_tweet["tweet"])
     return tkn.texts_to_sequences(type_tweet["tweet"]), tkn
