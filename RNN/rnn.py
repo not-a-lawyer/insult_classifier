@@ -6,6 +6,7 @@ from bayes_classifier import *
 
 from nltk.corpus import stopwords
 from keras.preprocessing.text import Tokenizer
+from keras.preprocessing.sequence import pad_sequences
 from keras.layers import Dense, Input, LSTM, Bidirectional, Activation, Conv1D, GRU, TimeDistributed, Dropout, Embedding, GlobalMaxPooling1D, MaxPooling1D, Add, Flatten, SpatialDropout1D
 from keras.optimizers import Adam
 from keras.models import Model
@@ -53,11 +54,27 @@ def tokenize_tweets(type_tweet):
     tkn.fit_on_texts(type_tweet["tweet"])
     return tkn.texts_to_sequences(type_tweet["tweet"]), tkn
 
+def pad_tweets(tokenized_tweets, length = None):
+    """
+    pads the already tokenized tweets
+    :param tokenized_tweets: list of tokenized tweets\
+    :param length:
+    :return padded_tweets:
+    :return length: length of padding
+    """
+
+
+    if length == None:
+        length = max([len(tweet) for tweet in tokenized_tweets])
+
+    return pad_sequences(tokenized_tweets, maxlen=length, padding='post'), length
 
 
 
 
-def set_up_triple_lstm_model():
+
+
+def set_up_triple_lstm_model(input_length):
     """
     Set up the keras model
     :return model:
@@ -65,13 +82,14 @@ def set_up_triple_lstm_model():
 
     learning_rate = 1e-3
 
-    input_tweet = Input(shape=(None,))
+    input_tweet = Input(shape=(input_length,))
     tweet_embedding = Embedding(5000, 200)(input_tweet)
     lstm = LSTM(64, recurrent_dropout=0.2, return_sequences = True)(tweet_embedding)
     dropout = Dropout(0.2)(lstm)
     lstm2 = LSTM(64, recurrent_dropout=0.2,  return_sequences= True)(dropout)
     dropout2 = Dropout(0.2)(lstm2)
-    output = Dense(2, activation='softmax')(dropout2)
+    flatten = Flatten()(dropout2)
+    output = Dense(2, activation='softmax')(flatten)
 
     model = Model(input_tweet, output)
 
