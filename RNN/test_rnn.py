@@ -56,6 +56,7 @@ class MyTestCase(unittest.TestCase):
         padded_test_tweet, _ = pad_tweets(tokenized_test_tweet, padding_length)
 
         result = model.predict(padded_test_tweet)
+        print(result)
 
 
 
