@@ -33,6 +33,11 @@ class MyTestCase(unittest.TestCase):
 
         pass
 
+    def test_german(self):
+        type_tweet = relabel_german_data()
+
+        pass
+
 
 
 
