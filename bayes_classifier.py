@@ -44,7 +44,7 @@ def train_model_mixed_data(type_tweet, split_index, custom_tweet_data = pd.Serie
 
     :param type_tweet:
     :param split_index:
-    :param custom_tweet_data:
+    :param custom_tweet_data: if provided, this is used instead of test data for prediction
     :param stop_words:
     :return: training_data, testing_data , label_train, label_test
     """
