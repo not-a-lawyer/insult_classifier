@@ -2,6 +2,7 @@ import unittest
 
 from bayes_classifier import *
 from RNN.rnn import *
+from sklearn.model_selection import train_test_split
 
 
 class MyTestCase(unittest.TestCase):
@@ -57,6 +58,20 @@ class MyTestCase(unittest.TestCase):
 
         result = model.predict(padded_test_tweet)
         print(result)
+
+    def evaluate_german(self):
+        # german data txt also needs to be copied into this subdirectory
+        type_tweet = relabel_german_data()
+
+        preprocess_tweets_for_keras(type_tweet)
+        tokenized_tweets, token = tokenize_tweets(type_tweet)
+
+        padded_tweets, padding_length = pad_tweets(tokenized_tweets)
+
+        model = set_up_triple_lstm_model(padding_length)
+
+
+
 
 
 
