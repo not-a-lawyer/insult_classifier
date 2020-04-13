@@ -64,7 +64,7 @@ class MyTestCase(unittest.TestCase):
         # german data txt also needs to be copied into this subdirectory
         type_tweet = relabel_german_data()
 
-        preprocess_tweets_for_keras(type_tweet)
+        preprocess_tweets_for_keras(type_tweet, 'German')
         tokenized_tweets, token = tokenize_tweets(type_tweet)
 
         padded_tweets, padding_length = pad_tweets(tokenized_tweets)
@@ -88,7 +88,10 @@ class MyTestCase(unittest.TestCase):
 
 
 
-        print(accuracy_score(predictions, y_test))
+        print(accuracy_score(y_test.tolist(), predictions))
+        print(precision_score(y_test.tolist(), predictions))
+        print(recall_score(y_test.tolist(), predictions))
+        print(f1_score(y_test.tolist(), predictions))
 
 
 
