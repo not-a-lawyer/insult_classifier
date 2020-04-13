@@ -40,6 +40,14 @@ def train_model(type_tweet, custom_tweet_data = pd.Series([]), stop_words = "eng
     return training_data, testing_data , label_train, label_test
 
 def train_model_mixed_data(type_tweet, split_index, custom_tweet_data = pd.Series([]), stop_words = "english"):
+    """
+
+    :param type_tweet:
+    :param split_index:
+    :param custom_tweet_data:
+    :param stop_words:
+    :return: training_data, testing_data , label_train, label_test
+    """
 
     data_train = type_tweet['tweet'][:split_index]
     label_train = type_tweet['class'][:split_index]
