@@ -3,6 +3,7 @@ import unittest
 from bayes_classifier import *
 from RNN.rnn import *
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 
 class MyTestCase(unittest.TestCase):
@@ -59,7 +60,7 @@ class MyTestCase(unittest.TestCase):
         result = model.predict(padded_test_tweet)
         print(result)
 
-    def evaluate_german(self):
+    def test_evaluate_german(self):
         # german data txt also needs to be copied into this subdirectory
         type_tweet = relabel_german_data()
 
@@ -69,6 +70,25 @@ class MyTestCase(unittest.TestCase):
         padded_tweets, padding_length = pad_tweets(tokenized_tweets)
 
         model = set_up_triple_lstm_model(padding_length)
+
+        x_train, x_test, y_train, y_test = train_test_split(padded_tweets, type_tweet["class"],
+                                                                          random_state=1)
+
+        model.fit(x_train, y_train, batch_size=32, epochs=2, validation_split=0.2, verbose=1)
+
+        probabilities = model.predict(x_test)
+        predictions = []
+
+        for probability in probabilities:
+            #set threshold value for hate speech at 10 percent
+            if probability[0] >= 0.1:
+                predictions.append(0)
+            else:
+                predictions.append(1)
+
+
+
+        print(accuracy_score(predictions, y_test))
 
 
 
