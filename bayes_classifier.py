@@ -23,6 +23,14 @@ def apply_model(training_data, testing_data , label_train):
 
 
 def train_model(type_tweet, custom_tweet_data = pd.Series([]), stop_words = "english"):
+    """
+    Fits the data on a Bayes model.
+
+    :param type_tweet:
+    :param custom_tweet_data: if provided, this is used instead of test data for prediction
+    :param stop_words:
+    :return: training_data, testing_data , label_train, label_test
+    """
     data_train, data_test, label_train, label_test = train_test_split(type_tweet['tweet'],
                                                         type_tweet['class'],
                                                         random_state=1)
@@ -41,6 +49,7 @@ def train_model(type_tweet, custom_tweet_data = pd.Series([]), stop_words = "eng
 
 def train_model_mixed_data(type_tweet, split_index, custom_tweet_data = pd.Series([]), stop_words = "english"):
     """
+    Fits the data on a Bayes model. Modified train_model() with custom splitting of data.
 
     :param type_tweet:
     :param split_index:
