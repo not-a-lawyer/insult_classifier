@@ -38,9 +38,13 @@ but it's as bad as marking everything the same label as the most frequent label.
 
 Did not provide any useful classifications.
 
+# RNN
+
+Accuracy is at roughly 55%. There's still a lot of room for improvement. E. g. increased training time, more cleaning or (BERT approach)[https://www.kaggle.com/c/jigsaw-multilingual-toxic-comment-classification].
+
 # TO DO
 
-Trying out RNN approach.
+Trying out RNN Bert approach.
 
 # Legal
 [MIT](https://github.com/not-a-lawyer/insult_classifier/blob/master/LICENSE)
