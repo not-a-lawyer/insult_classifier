@@ -44,7 +44,8 @@ Accuracy is at roughly 55%. There's still a lot of room for improvement. E. g. i
 
 # TO DO
 
-Trying out RNN Bert approach.
+- Trying out RNN Bert approach.
+- Visualize different approaches.
 
 # Legal
 [MIT](https://github.com/not-a-lawyer/insult_classifier/blob/master/LICENSE)
