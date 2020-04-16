@@ -44,7 +44,7 @@ Accuracy is at roughly 55%. There's still a lot of room for improvement. E. g. i
 
 # TO DO
 
-- Trying out RNN Bert approach.
+- Trying out [Pre Bert](https://github.com/jalammar/jalammar.github.io/blob/master/notebooks/bert/A_Visual_Notebook_to_Using_BERT_for_the_First_Time.ipynb) / Naive Bayes approach.
 - Visualize different approaches.
 
 # Legal
