@@ -39,7 +39,7 @@ class MyTestCase(unittest.TestCase):
         #german data txt also needs to be copied into this subdirectory
         type_tweet = relabel_german_data()
 
-        preprocess_tweets_for_keras(type_tweet)
+        preprocess_tweets_for_keras(type_tweet, stopwords="German")
         tokenized_tweets, token = tokenize_tweets(type_tweet)
 
         padded_tweets, padding_length = pad_tweets(tokenized_tweets)
@@ -79,12 +79,12 @@ class MyTestCase(unittest.TestCase):
         probabilities = model.predict(x_test)
         predictions = []
 
-        for probability in probabilities:
+        """for probability in probabilities:
             #set threshold value for hate speech at 10 percent
             if probability[0] >= 0.1:
                 predictions.append(0)
             else:
-                predictions.append(1)
+                predictions.append(1)"""
 
 
 
