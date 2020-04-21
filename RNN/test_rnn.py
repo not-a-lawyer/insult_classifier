@@ -79,12 +79,12 @@ class MyTestCase(unittest.TestCase):
         probabilities = model.predict(x_test)
         predictions = []
 
-        """for probability in probabilities:
+        for probability in probabilities:
             #set threshold value for hate speech at 10 percent
-            if probability[0] >= 0.1:
-                predictions.append(0)
+            if probability >= 0.8:
+                predictions.append(1)
             else:
-                predictions.append(1)"""
+                predictions.append(0)
 
 
 
