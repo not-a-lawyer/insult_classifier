@@ -97,7 +97,7 @@ def set_up_triple_lstm_model(input_length):
     dropout2 = Dropout(0.2)(lstm2)
     flatten = Flatten()(dropout2)
     #TODO adjust output to 1 and make it work
-    output = Dense(2, activation='softmax')(flatten)
+    output = Dense(1, activation='sigmoid')(flatten)
 
     model = Model(input_tweet, output)
 
