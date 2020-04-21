@@ -101,7 +101,7 @@ def set_up_triple_lstm_model(input_length):
 
     model = Model(input_tweet, output)
 
-    model.compile(loss=sparse_categorical_crossentropy,
+    model.compile(loss='binary_crossentropy',
                   optimizer=Adam(learning_rate),
                   metrics=['accuracy'])
     return model
