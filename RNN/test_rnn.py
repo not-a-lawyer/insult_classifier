@@ -77,21 +77,28 @@ class MyTestCase(unittest.TestCase):
         model.fit(x_train, y_train, batch_size=32, epochs=2, validation_split=0.2, verbose=1)
 
         probabilities = model.predict(x_test)
-        predictions = []
-
-        for probability in probabilities:
-            #set threshold value for hate speech at 10 percent
-            if probability >= 0.8:
-                predictions.append(1)
-            else:
-                predictions.append(0)
 
 
+        for threshold in range(1, 10):
+            predictions = []
 
-        print(accuracy_score(y_test.tolist(), probabilities))
-        print(precision_score(y_test.tolist(), probabilities))
-        print(recall_score(y_test.tolist(), probabilities))
-        print(f1_score(y_test.tolist(), probabilities))
+            for probability in probabilities:
+                #set threshold value for hate speech at 10-90 percent
+                if probability >= threshold/10:
+                    predictions.append(1)
+                else:
+                    predictions.append(0)
+
+            print("Accuracy:", accuracy_score(y_test.tolist(), predictions))
+            print("Precision:",precision_score(y_test.tolist(), predictions))
+            print("Recall:", recall_score(y_test.tolist(), predictions))
+            print("F1:",f1_score(y_test.tolist(), predictions))
+
+            print("Threshold:", threshold)
+
+
+
+
 
 
 
