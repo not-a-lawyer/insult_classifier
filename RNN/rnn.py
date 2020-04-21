@@ -96,7 +96,7 @@ def set_up_triple_lstm_model(input_length):
     lstm2 = LSTM(64, recurrent_dropout=0.2,  return_sequences= True)(dropout)
     dropout2 = Dropout(0.2)(lstm2)
     flatten = Flatten()(dropout2)
-    output = Dense(1, activation='softmax')(flatten)
+    output = Dense(2, activation='softmax')(flatten)
 
     model = Model(input_tweet, output)
 
