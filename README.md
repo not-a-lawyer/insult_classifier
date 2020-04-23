@@ -36,7 +36,7 @@ but it's as bad as marking everything the same label as the most frequent label.
 
 # Topic Modeling
 
-Did not provide any useful classifications.
+Did not provide any useful classifications (only high level attempt).
 
 # RNN
 
