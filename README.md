@@ -36,11 +36,11 @@ but it's as bad as marking everything the same label as the most frequent label.
 
 # Topic Modeling
 
-Did not provide any useful classifications.
+Did not provide any useful classifications (only high level attempt).
 
 # RNN
 
-Accuracy is at roughly 55%. There's still a lot of room for improvement. E. g. increased training time, more cleaning or [BERT approach](https://www.kaggle.com/c/jigsaw-multilingual-toxic-comment-classification).
+Accuracy is at roughly 72% with Threshold of 0.2. There's still a lot of room for improvement. E. g. increased training time, more cleaning or [BERT approach](https://www.kaggle.com/c/jigsaw-multilingual-toxic-comment-classification).
 
 # TO DO
 
