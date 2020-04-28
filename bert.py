@@ -42,6 +42,26 @@ def main():
     #_______________________why [0]?_________________#
     padded = np.array([i + [0] * (max_len - len(i)) for i in tokenized_tweet.values])
 
+    attention_mask = np.where(padded != 0, 1, 0)
+    attention_mask.shape
+
+    input_ids = torch.tensor(padded)
+    attention_mask = torch.tensor(attention_mask)
+
+    with torch.no_grad():
+        last_hidden_states = model(input_ids, attention_mask=attention_mask)
+
+    features = last_hidden_states[0][:, 0, :].numpy()
+    labels = type_tweet["class"]
+
+    train_features, test_features, train_labels, test_labels = train_test_split(features, labels)
+
+    lr_clf = LogisticRegression()
+    lr_clf.fit(train_features, train_labels)
+    print(lr_clf.score(test_features, test_labels))
+
+
+
     pass
 
 if __name__ == "__main__":
