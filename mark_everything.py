@@ -1,3 +1,4 @@
+#TODO check whether dummy classifier also does this
 def count_true_positive(two_column_data_set):
 
     positive_count = 0
