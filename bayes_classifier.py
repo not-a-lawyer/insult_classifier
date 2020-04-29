@@ -81,7 +81,9 @@ def train_model_mixed_data(type_tweet, split_index, custom_tweet_data = pd.Serie
 
 
 def import_data(filename = "insults.csv"):
-    # Dataset "insults.csv" from https://github.com/t-davidson/hate-speech-and-offensive-language/tree/master/data
+    """ Dataset "insults.csv" from https://github.com/t-davidson/
+    hate-speech-and-offensive-language/tree/master/data
+    """
 
     df = pd.read_csv(filename)
 
