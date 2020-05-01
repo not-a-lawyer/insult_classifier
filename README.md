@@ -46,6 +46,7 @@ Accuracy is at roughly 72% with Threshold of 0.2. There's still a lot of room fo
 
 - Trying out [Pre Bert](https://github.com/jalammar/jalammar.github.io/blob/master/notebooks/bert/A_Visual_Notebook_to_Using_BERT_for_the_First_Time.ipynb) / Naive Bayes approach and German BERT on German Tweets.
 - Visualize different approaches.
+- Open Legal Data API
 
 # Issues
 Stuck at too less memory with BERT.
