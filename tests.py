@@ -24,7 +24,18 @@ class MyTestCase(unittest.TestCase):
         print_metrics(german_hate_speech_count, german)
 
     def test_english_data(self):
-        training_data, testing_data, label_train, label_test = train_model(import_data())
+        imported_tweets = import_data()
+        training_data, testing_data, label_train, label_test = train_model(imported_tweets)
+        predictions = apply_model(training_data, testing_data, label_train)
+        evaluate_model(label_test, predictions)
+
+        #Now with cleaning
+
+        print("Cleaned:\n")
+
+        clean_tweets(imported_tweets)
+
+        training_data, testing_data, label_train, label_test = train_model(imported_tweets)
         predictions = apply_model(training_data, testing_data, label_train)
         evaluate_model(label_test, predictions)
 

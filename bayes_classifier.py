@@ -11,23 +11,40 @@ def remove_non_letter_character(tweet):
     :param tweet:
     :return: only_letter_tweet
     """
-    pattern = re.compile('[^a-zA-Z]')
+    pattern = re.compile('[^a-zA-Z ]')
 
 
-    only_letter_tweet = re.sub(pattern, "", tweet)
+    only_letter_tweet = re.sub(pattern, " ", tweet)
 
     return only_letter_tweet
+
+def remove_RT_substring(tweet):
+    """
+    using regex to remove all single RT
+    :param tweet:
+    :return: no_RT_tweet
+    """
+    pattern = re.compile('[ RT ]')
+
+
+    no_RT_tweet = re.sub(pattern, " ", tweet)
+
+    return no_RT_tweet
 
 
 def clean_tweets(type_tweet):
     """
-    Applies non-letter-character removal
+    Applies several removal functions
     :param type_tweet:
 
     """
 
     #Using regex to remove all letter characters
-    type_tweet['tweet'].apply(remove_non_letter_character)
+    type_tweet['tweet'] = type_tweet['tweet'].apply(lambda tweet: remove_non_letter_character(tweet))
+    type_tweet['tweet'] = type_tweet['tweet'].apply(lambda tweet: remove_RT_substring(tweet))
+
+
+
 
 
 
