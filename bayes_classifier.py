@@ -147,6 +147,10 @@ def import_data(filename = "insults.csv"):
     return type_tweet
 
 def relabel_german_data():
+    """
+    Little misnomer, this function also IMPORTS the German data
+    :return: type_tweet DataFrame with class(0:offensive) and tweet column
+    """
     names = ["tweet", "class", "detail"]
 
     #Downloaded the data from https://github.com/uds-lsv/GermEval-2018-Data/blob/master/germeval2018.training.txt. See readme for citation.
