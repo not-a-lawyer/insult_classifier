@@ -28,6 +28,11 @@ class MyTestCase(unittest.TestCase):
         predictions = apply_model(training_data, testing_data, label_train)
         evaluate_model(label_test, predictions)
 
+    def test__cleaning_english_data(self):
+        training_data, testing_data, label_train, label_test = train_model(import_data())
+        predictions = apply_model(training_data, testing_data, label_train)
+        evaluate_model(label_test, predictions)
+
 
     def test_unique_tweet(self):
         tweet_data = pd.Series([
