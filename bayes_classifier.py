@@ -4,6 +4,12 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
+def clean_tweets(type_tweet):
+
+    cleaned_type_tweet = type_tweet
+
+    return cleaned_type_tweet
+
 
 def evaluate_model(label_test, predictions):
     print('Accuracy score: ', format(accuracy_score(label_test, predictions)))
