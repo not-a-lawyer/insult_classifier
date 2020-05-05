@@ -3,12 +3,33 @@ import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+import re
+
+def remove_non_letter_character(tweet):
+    """
+    using regex to remove all non letter characters
+    :param tweet:
+    :return: only_letter_tweet
+    """
+    pattern = re.compile('[^a-zA-Z]')
+
+
+    only_letter_tweet = re.sub(pattern, "", tweet)
+
+    return only_letter_tweet
+
 
 def clean_tweets(type_tweet):
+    """
+    Applies non-letter-character removal
+    :param type_tweet:
 
-    cleaned_type_tweet = type_tweet
+    """
 
-    return cleaned_type_tweet
+    #Using regex to remove all letter characters
+    type_tweet['tweet'].apply(remove_non_letter_character)
+
+
 
 
 def evaluate_model(label_test, predictions):
